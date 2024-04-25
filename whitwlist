@@ -1,0 +1,24 @@
+-- Whitelist of allowed players
+local whitelist = {
+    "Player1",
+    "Player2",
+    "Player3"
+}
+
+game.Players.PlayerAdded:Connect(function(player)
+    local playerName = player.Name
+    local isWhitelisted = false
+    
+    -- Check if the player is in the whitelist
+    for _, name in ipairs(whitelist) do
+        if playerName == name then
+            isWhitelisted = true
+            break
+        end
+    end
+    
+    if not isWhitelisted then
+        -- Kick the player and send a message with the link
+        player:Kick("You are not on the whitelist. Buy access at .gg/BuyGlxck.cc")
+    end
+end)
