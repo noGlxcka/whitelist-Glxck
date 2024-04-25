@@ -1,7 +1,7 @@
 -- Whitelist of allowed players
 local whitelist = {
-    "Player1",
-    "Player2",
+    "matthewAdrien15",
+    "D3vilOrKnownAsV4mp",
     "Player3"
 }
 
