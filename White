@@ -1,0 +1,7 @@
+Light["ClockTime"] = "12"
+                                game:GetService("Lighting").Sky.SkyboxBk = "http://www.roblox.com/asset/?id=2571711090"
+                                game:GetService("Lighting").Sky.SkyboxDn = "http://www.roblox.com/asset/?id=2571711090"
+                                game:GetService("Lighting").Sky.SkyboxFt = "http://www.roblox.com/asset/?id=2571711090"
+                                game:GetService("Lighting").Sky.SkyboxLf = "http://www.roblox.com/asset/?id=2571711090"
+                                game:GetService("Lighting").Sky.SkyboxRt = "http://www.roblox.com/asset/?id=2571711090"
+                                game:GetService("Lighting").Sky.SkyboxUp = "http://www.roblox.com/asset/?id=2571711090"
